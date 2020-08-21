@@ -12,12 +12,7 @@ const pointUrl = 'http://localhost:1444';
 app.all('*', async (req, res) => {
   const config = {
     headers: req.headers,
-    body: req.body,
-    method: req.method.toLowerCase(),
-    url: req.path,
-    baseURL: pointUrl,
     auth: req.auth,
-    params: req.params,
   };
 
   const [error, result] = await to(

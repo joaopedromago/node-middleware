@@ -32,9 +32,9 @@ app.all('*', async (req, res) => {
   );
 
   if (error) {
-    res.send(error.response.data).status(error.response.status);
+    res.status(error.response.status).send(error.response.data);
   } else {
-    res.send(result.data).status(result.status);
+    res.status(result.status).send(result.data);
   }
 });
 
